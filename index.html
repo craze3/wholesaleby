@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wholesaleby v1.0</title>
+  
+  <link rel="icon" type="image/x-icon" href="img/icon.png">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <html lang="en" ng-app="StarterApp">
+  <head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+  </head>
+  <body layout="row" ng-controller="AppCtrl">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 md-navigation-drawer" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-toolbar class="md-hue-2">
+        <span flex></span>
+		<h3><img style="height: 34px; margin-right: 8px; vertical-align: bottom; margin-left: 8px;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMzg5IDM4OS4xNjgxNSIgd2lkdGg9IjUxMnB4Ij48cGF0aCBkPSJtMjg1LjQyNTc4MSAzODIuMzM5ODQ0aC0xNjEuMTUyMzQzYy0yMy42Njc5NjkgMC00NC41MjczNDQtMTUuNTQyOTY5LTUxLjI5Mjk2OS0zOC4yMjI2NTZsLTQ1LjYyNS0xNTIuOTIxODc2di0yMC40ODA0NjhoMzU0Ljk4ODI4MXYyMC40ODA0NjhsLTQ1LjYyMTA5NCAxNTIuOTIxODc2Yy02Ljc2NTYyNSAyMi42Nzk2ODctMjcuNjI1IDM4LjIyMjY1Ni01MS4yOTY4NzUgMzguMjIyNjU2em0wIDAiIGZpbGw9IiMwZjY1ZTUiLz48cGF0aCBkPSJtMjg1LjQyOTY4OCAzODkuMTY3OTY5aC0xNjEuMTYwMTU3Yy0yNi40ODA0NjkgMC01MC4yNjU2MjUtMTcuNzI2NTYzLTU3LjgzMjAzMS00My4xMDE1NjNsLTQ1LjYyMTA5NC0xNTIuOTE3OTY4Yy0uMTkxNDA2LS42MzI4MTMtLjI4NTE1Ni0xLjI5Mjk2OS0uMjg1MTU2LTEuOTU3MDMydi0yMC40NzY1NjJjMC0zLjc3MzQzOCAzLjA1MDc4MS02LjgyODEyNSA2LjgyNDIxOS02LjgyODEyNWgzNTQuOTg4MjgxYzMuNzczNDM4IDAgNi44MjgxMjUgMy4wNTQ2ODcgNi44MjgxMjUgNi44MjgxMjV2MjAuNDc2NTYyYzAgLjY2NDA2My0uMDkzNzUgMS4zMjAzMTMtLjI4OTA2MyAxLjk1NzAzMmwtNDUuNjE3MTg3IDE1Mi45MTc5NjhjLTcuNTcwMzEzIDI1LjM3NS0zMS4zNTU0NjkgNDMuMTAxNTYzLTU3LjgzNTkzNyA0My4xMDE1NjN6bS0yNTEuMjQ2MDk0LTE5OC45NzI2NTcgNDUuMzMyMDMxIDE1MS45NjQ4NDRjNS44NTkzNzUgMTkuNjQwNjI1IDI0LjI2MTcxOSAzMy4zNTU0NjkgNDQuNzUzOTA2IDMzLjM1NTQ2OWgxNjEuMTYwMTU3YzIwLjQ5NjA5MyAwIDM4Ljg5NDUzMS0xMy43MTQ4NDQgNDQuNzUzOTA2LTMzLjM1NTQ2OWw0NS4zMzIwMzEtMTUxLjk2NDg0NHYtMTIuNjUyMzQzaC0zNDEuMzMyMDMxem0wIDAiIGZpbGw9IiMwZTY1ZTUiLz48cGF0aCBkPSJtMzU1LjAzNTE1NiAxNTAuMjM0Mzc1YzAgNDEuNDcyNjU2LTMzLjYxNzE4NyA3NS4wOTM3NS03NS4wODk4NDQgNzUuMDkzNzUtNDEuNDc2NTYyIDAtNzUuMDkzNzUtMzMuNjIxMDk0LTc1LjA5Mzc1LTc1LjA5Mzc1czMzLjYxNzE4OC03NS4wOTM3NSA3NS4wOTM3NS03NS4wOTM3NWM0MS40NzI2NTcgMCA3NS4wODk4NDQgMzMuNjIxMDk0IDc1LjA4OTg0NCA3NS4wOTM3NXptMCAwIiBmaWxsPSIjOTRjMWZmIi8+PHBhdGggZD0ibTI3OS45NDUzMTIgMjMyLjE1NjI1Yy00NS4xNzU3ODEgMC04MS45MjE4NzQtMzYuNzQ2MDk0LTgxLjkyMTg3NC04MS45MjE4NzUgMC00NS4xNzE4NzUgMzYuNzQ2MDkzLTgxLjkxNzk2OSA4MS45MjE4NzQtODEuOTE3OTY5IDQ1LjE3MTg3NiAwIDgxLjkxNzk2OSAzNi43NDYwOTQgODEuOTE3OTY5IDgxLjkxNzk2OSAwIDQ1LjE3NTc4MS0zNi43NDYwOTMgODEuOTIxODc1LTgxLjkxNzk2OSA4MS45MjE4NzV6bTAtMTUwLjE4NzVjLTM3LjY0MDYyNCAwLTY4LjI2OTUzMSAzMC42MjUtNjguMjY5NTMxIDY4LjI2NTYyNXMzMC42Mjg5MDcgNjguMjY1NjI1IDY4LjI2OTUzMSA2OC4yNjU2MjVjMzcuNjQwNjI2IDAgNjguMjY1NjI2LTMwLjYyNSA2OC4yNjU2MjYtNjguMjY1NjI1cy0zMC42MjUtNjguMjY1NjI1LTY4LjI2NTYyNi02OC4yNjU2MjV6bTAgMCIgZmlsbD0iIzBlNjVlNSIvPjxwYXRoIGQ9Im0yNTEuMDExNzE5IDEzMi4xMDkzNzVjLTEuNTgyMDMxIDAtMy4xNjc5NjktLjU0Njg3NS00LjQ2MDkzOC0xLjY2MDE1Ni0yLjg1MTU2Mi0yLjQ2MDkzOC0zLjE3MTg3NS02Ljc3MzQzOC0uNzA3MDMxLTkuNjI4OTA3IDguNTY2NDA2LTkuOTI1NzgxIDIwLjk5NjA5NC0xNS42MjEwOTMgMzQuMTAxNTYyLTE1LjYyMTA5MyA4LjU4OTg0NCAwIDE2Ljk0NTMxMyAyLjQzMzU5MyAyNC4xNTYyNSA3LjAyNzM0MyAzLjE3OTY4OCAyLjAyNzM0NCA0LjExMzI4MiA2LjI0NjA5NCAyLjA5Mzc1IDkuNDI1NzgyLTIuMDI3MzQzIDMuMTg3NS02LjI1IDQuMTEzMjgxLTkuNDI1NzgxIDIuMDkzNzUtNS4wMTk1MzEtMy4xOTkyMTktMTAuODM5ODQzLTQuODkwNjI1LTE2LjgyNDIxOS00Ljg5MDYyNS05LjEzMjgxMiAwLTE3Ljc5Mjk2OCAzLjk2NDg0My0yMy43NjU2MjQgMTAuODg2NzE5LTEuMzUxNTYzIDEuNTY2NDA2LTMuMjU3ODEzIDIuMzY3MTg3LTUuMTY3OTY5IDIuMzY3MTg3em0wIDAiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTY2LjcyNjU2MiAyMDcuMzU1NDY5Yy0xMi4wOTc2NTYgMTQuNDU3MDMxLTMzLjYyMTA5MyAxNi4zNzUtNDguMDgyMDMxIDQuMjgxMjVsLTk5LjQ5NjA5My04My4yMTQ4NDRjLTE0LjQ2MDkzOC0xMi4wOTc2NTYtMTYuMzc1LTMzLjYyMTA5NC00LjI4MTI1LTQ4LjA4MjAzMSAxMi4wOTM3NS0xNC40NjA5MzggMTkuMzE2NDA2LTEyLjAyMzQzOCA0OC4wODIwMzEtNC4yODUxNTYgNDEuNjkxNDA2IDExLjIxODc1IDg3LjMwNDY4NyA1NS4yMjI2NTYgOTkuNDkyMTg3IDgzLjIxODc1IDEyLjE4MzU5NCAyNy45OTIxODcgMTYuMzc1IDMzLjYyMTA5MyA0LjI4NTE1NiA0OC4wODIwMzF6bTAgMCIgZmlsbD0iI2Q3ZTlmZiIvPjxwYXRoIGQ9Im0xNDAuNDc2NTYyIDIyNi40MTQwNjJjLTkuNTg1OTM3IDAtMTguNzczNDM3LTMuMzE2NDA2LTI2LjIxNDg0My05LjUzOTA2MmwtOTkuNDkyMTg4LTgzLjIxODc1Yy04LjM5NDUzMS03LjAxNTYyNS0xMy41NDY4NzUtMTYuODgyODEyLTE0LjUxOTUzMS0yNy43ODEyNXMyLjM1OTM3NS0yMS41MTk1MzEgOS4zODY3MTktMjkuOTE0MDYyYzE0LjU1MDc4MS0xNy40MjU3ODIgMjUuNzQ2MDkzLTE0LjQwNjI1IDUyLjgwMDc4MS03LjExMzI4MmwyLjI4NTE1Ni42MTMyODJjNDIuMTQ4NDM4IDExLjMzOTg0MyA5MC41IDU2LjEyODkwNiAxMDMuOTgwNDY5IDg3LjA4NTkzN2wyLjg5NDUzMSA2LjYwMTU2M2MxMC4wMTE3MTkgMjIuNjk5MjE4IDE0LjE2MDE1NiAzMi4wOTM3NS4zNTkzNzUgNDguNTg1OTM3LTcuMDExNzE5IDguMzk0NTMxLTE2Ljg3ODkwNiAxMy41NDY4NzUtMjcuNzc3MzQzIDE0LjUxOTUzMS0xLjI0MjE4OC4xMDkzNzUtMi40NzY1NjMuMTYwMTU2LTMuNzAzMTI2LjE2MDE1NnptLTEwNi44OTg0MzctMTQ5LjczODI4MWMtNS44NzUgMC04LjgyODEyNSAyLjQ4ODI4MS0xMy40Njg3NSA4LjAzOTA2My00LjY4NzUgNS42MDE1NjItNi45MDYyNSAxMi42Nzk2ODctNi4yNTc4MTMgMTkuOTQ5MjE4LjY0NDUzMiA3LjI2NTYyNiA0LjA4NTkzOCAxMy44NDM3NSA5LjY3OTY4OCAxOC41MjM0MzhsOTkuNDkyMTg4IDgzLjIxNDg0NGM1LjYwMTU2MiA0LjY3OTY4NyAxMi43MzQzNzQgNi45MTQwNjIgMTkuOTQxNDA2IDYuMjUzOTA2IDcuMjY1NjI1LS42NDg0MzggMTMuODQ3NjU2LTQuMDg1OTM4IDE4LjUxOTUzMS05LjY3OTY4OCA4LjE2MDE1Ni05Ljc1MzkwNiA3LjYwMTU2My0xMS42OTkyMTgtMi4zNzg5MDYtMzQuMzIwMzEybC0yLjkyMTg3NS02LjY1MjM0NGMtMTIuMDExNzE5LTI3LjU5Mzc1LTU3LjA3MDMxMy02OS4xNDg0MzctOTUuMDAzOTA2LTc5LjM1MTU2MmwtMi4yOTY4NzYtLjYyMTA5NGMtMTIuNzUzOTA2LTMuNDMzNTk0LTIwLjE1MjM0My01LjM1NTQ2OS0yNS4zMDQ2ODctNS4zNTU0Njl6bTAgMCIgZmlsbD0iIzBlNjVlNSIvPjxwYXRoIGQ9Im02Ni4zNzEwOTQgMTIxLjM0NzY1NmMtMy40OTYwOTQgMC02LjQ2ODc1LTIuNjYwMTU2LTYuNzkyOTY5LTYuMjA3MDMxLS4zMzk4NDQtMy43NTM5MDYgMi40MjU3ODEtNy4wNzQyMTkgNi4xNzk2ODctNy40MjE4NzVsNTIuNjgzNTk0LTQuNzk2ODc1YzMuNzg5MDYzLS4zNTU0NjkgNy4wODIwMzIgMi40MjU3ODEgNy40MjE4NzUgNi4xNzk2ODcuMzQzNzUgMy43NTM5MDctMi40MjU3ODEgNy4wNzQyMTktNi4xNzk2ODcgNy40MTc5NjlsLTUyLjY4NzUgNC44MDA3ODFjLS4yMTA5MzguMDE5NTMyLS40MjE4NzUuMDI3MzQ0LS42MjUuMDI3MzQ0em0wIDAiIGZpbGw9IiMwZTY1ZTUiLz48cGF0aCBkPSJtMTA4LjI1NzgxMiAxNTYuMzkwNjI1Yy0zLjMzNTkzNyAwLTYuMjUzOTA2LTIuNDQxNDA2LTYuNzUtNS44MzU5MzctLjU0Mjk2OC0zLjczNDM3NiAyLjAzNTE1Ny03LjE5OTIxOSA1Ljc2MTcxOS03Ljc0NjA5NGw0MS45NzI2NTctNi4xNTIzNDRjMy44MDg1OTMtLjU4NTkzOCA3LjIwNzAzMSAyLjAzMTI1IDcuNzQ2MDkzIDUuNzYxNzE5LjU0Njg3NSAzLjczNDM3NS0yLjAzMTI1IDcuMTk5MjE5LTUuNzU3ODEyIDcuNzQ2MDkzbC00MS45NzI2NTcgNi4xNTIzNDRjLS4zMzk4NDMuMDUwNzgyLS42NzU3ODEuMDc0MjE5LTEgLjA3NDIxOXptMCAwIiBmaWxsPSIjMGU2NWU1Ii8+PHBhdGggZD0ibTI4NS40MjU3ODEgMzYxLjg2MzI4MWgtMTYxLjE1MjM0M2MtMjMuNjY3OTY5IDAtNDQuNTI3MzQ0LTE1LjU0Njg3NS01MS4yOTI5NjktMzguMjI2NTYybC00NS42MjUtMTUyLjkyMTg3NWgzNTQuOTg4MjgxbC00NS42MjEwOTQgMTUyLjkyMTg3NWMtNi43NjU2MjUgMjIuNjc5Njg3LTI3LjYyNSAzOC4yMjY1NjItNTEuMjk2ODc1IDM4LjIyNjU2MnptMCAwIiBmaWxsPSIjNWM5ZWZmIi8+PGcgZmlsbD0iIzBlNjVlNSI+PHBhdGggZD0ibTI4NS40Mjk2ODggMzY4LjY4NzVoLTE2MS4xNjAxNTdjLTI2LjQ4MDQ2OSAwLTUwLjI2NTYyNS0xNy43MjY1NjItNTcuODMyMDMxLTQzLjA5NzY1NmwtNDUuNjIxMDk0LTE1Mi45MjE4NzVjLS42MTcxODctMi4wNjY0MDctLjIxODc1LTQuMzA4NTk0IDEuMDY2NDA2LTYuMDM1MTU3IDEuMjg5MDYzLTEuNzI2NTYyIDMuMzIwMzEzLTIuNzQ2MDkzIDUuNDcyNjU3LTIuNzQ2MDkzaDM1NC45ODgyODFjMi4xNTIzNDQgMCA0LjE4NzUgMS4wMjM0MzcgNS40NzI2NTYgMi43NDYwOTMgMS4yODkwNjMgMS43MjY1NjMgMS42ODc1IDMuOTY4NzUgMS4wNjY0MDYgNi4wMzUxNTdsLTQ1LjYxNzE4NyAxNTIuOTIxODc1Yy03LjU3MDMxMyAyNS4zNzEwOTQtMzEuMzU1NDY5IDQzLjA5NzY1Ni01Ny44MzU5MzcgNDMuMDk3NjU2em0tMjQ4LjkxNDA2My0xOTEuMTQ0NTMxIDQzIDE0NC4xMzY3MTljNS44NTkzNzUgMTkuNjQwNjI0IDI0LjI2MTcxOSAzMy4zNTU0NjggNDQuNzUzOTA2IDMzLjM1NTQ2OGgxNjEuMTYwMTU3YzIwLjQ5NjA5MyAwIDM4Ljg5NDUzMS0xMy43MTQ4NDQgNDQuNzUzOTA2LTMzLjM1NTQ2OGw0My0xNDQuMTM2NzE5em0wIDAiLz48cGF0aCBkPSJtMzYxLjg2MzI4MSAyMzguOTgwNDY5aC0zMTQuMDI3MzQzYy0zLjc3MzQzOCAwLTYuODI0MjE5LTMuMDUwNzgxLTYuODI0MjE5LTYuODI0MjE5czMuMDUwNzgxLTYuODI4MTI1IDYuODI0MjE5LTYuODI4MTI1aDMxNC4wMjczNDNjMy43NzM0MzggMCA2LjgyODEyNSAzLjA1NDY4NyA2LjgyODEyNSA2LjgyODEyNXMtMy4wNTQ2ODcgNi44MjQyMTktNi44MjgxMjUgNi44MjQyMTl6bTAgMCIvPjxwYXRoIGQ9Im0zNDEuMzgyODEyIDMxNC4wNzQyMTloLTI3My4wNjY0MDZjLTMuNzczNDM3IDAtNi44MjgxMjUtMy4wNTA3ODEtNi44MjgxMjUtNi44MjQyMTlzMy4wNTQ2ODgtNi44MjgxMjUgNi44MjgxMjUtNi44MjgxMjVoMjczLjA2NjQwNmMzLjc3MzQzOCAwIDYuODI4MTI2IDMuMDU0Njg3IDYuODI4MTI2IDYuODI4MTI1cy0zLjA1NDY4OCA2LjgyNDIxOS02LjgyODEyNiA2LjgyNDIxOXptMCAwIi8+PHBhdGggZD0ibTEzMC4zMjQyMTkgMzY4LjY4NzVjLTMuNzczNDM4IDAtNi44MjgxMjUtMy4wNTA3ODEtNi44MjgxMjUtNi44MjQyMTl2LTE5MS4xNDg0MzdjMC0zLjc3MzQzOCAzLjA1NDY4Ny02LjgyODEyNSA2LjgyODEyNS02LjgyODEyNSAzLjc3MzQzNyAwIDYuODI0MjE5IDMuMDU0Njg3IDYuODI0MjE5IDYuODI4MTI1djE5MS4xNDg0MzdjMCAzLjc3MzQzOC0zLjA1MDc4MiA2LjgyNDIxOS02LjgyNDIxOSA2LjgyNDIxOXptMCAwIi8+PHBhdGggZD0ibTI3My4xMTcxODggMzY4LjY4NzVjLTMuNzczNDM4IDAtNi44MjgxMjYtMy4wNTA3ODEtNi44MjgxMjYtNi44MjQyMTl2LTE5MS4xNDg0MzdjMC0zLjc3MzQzOCAzLjA1NDY4OC02LjgyODEyNSA2LjgyODEyNi02LjgyODEyNSAzLjc3MzQzNyAwIDYuODI4MTI0IDMuMDU0Njg3IDYuODI4MTI0IDYuODI4MTI1djE5MS4xNDg0MzdjMCAzLjc3MzQzOC0zLjA1NDY4NyA2LjgyNDIxOS02LjgyODEyNCA2LjgyNDIxOXptMCAwIi8+PHBhdGggZD0ibTMzNC43MzA0NjkgMTA1Ljc0MjE4OGMtLjUxMTcxOSAwLTEuMDMxMjUtLjA1NDY4OC0xLjU1MDc4MS0uMTc5Njg4LTMuNjc1NzgyLS44NTE1NjItNS45NjA5MzgtNC41MTk1MzEtNS4xMDE1NjMtOC4xOTUzMTJsMTMuNDg0Mzc1LTU3LjkwNjI1Yy44NTU0NjktMy42Nzk2ODggNC41MTk1MzEtNiA4LjE5NTMxMi01LjA5NzY1NyAzLjY3MTg3Ni44NTE1NjMgNS45NjA5MzggNC41MTk1MzEgNS4xMDE1NjMgOC4xOTE0MDdsLTEzLjQ4ODI4MSA1Ny45MTAxNTZjLS43MzQzNzUgMy4xNTIzNDQtMy41MzkwNjMgNS4yNzczNDQtNi42NDA2MjUgNS4yNzczNDR6bTAgMCIvPjwvZz48cGF0aCBkPSJtMzMzLjk3MjY1NiA2Ny41NDY4NzVzLTgzLjA3NDIxOC0yMi41ODU5MzctNTguNDE0MDYyLTUzLjgzMjAzMWMyNC42NTYyNS0zMS4yNDYwOTQgNTguNDE0MDYyIDUzLjgzMjAzMSA1OC40MTQwNjIgNTMuODMyMDMxem0wIDAiIGZpbGw9IiM5NGMxZmYiLz48cGF0aCBkPSJtMzMzLjk2ODc1IDc0LjM3NWMtLjYwMTU2MiAwLTEuMTk5MjE5LS4wNzgxMjUtMS43OTI5NjktLjI0MjE4OC01Ljk2NDg0My0xLjYxNzE4Ny01OC41NzgxMjUtMTYuNTg1OTM3LTY2Ljg1OTM3NS00MS42ODM1OTMtMS43ODEyNS01LjQwMjM0NC0yLjM4MjgxMi0xMy43NjE3MTkgNC44Nzg5MDYtMjIuOTYwOTM4IDcuMTYwMTU3LTkuMDc0MjE5IDE0LjkzMzU5NC0xMC4wMzUxNTYgMjAuMTg3NS05LjI4NTE1NiAyNC40NjQ4NDQgMy41NzgxMjUgNDUuODg2NzE5IDU0LjYzMjgxMyA0OS45MzM1OTQgNjQuODI0MjE5Ljk1MzEyNSAyLjQwNjI1LjQ2NDg0NCA1LjE0MDYyNS0xLjI1MzkwNiA3LjA2NjQwNi0xLjMxMjUgMS40NzI2NTYtMy4xNzk2ODggMi4yODEyNS01LjA5Mzc1IDIuMjgxMjV6bS00Ni40NTcwMzEtNjAuNzM4MjgxYy0xLjM0NzY1NyAwLTMuNjQ4NDM4LjU3MDMxMi02LjU5Mzc1IDQuMzA0Njg3LTMuODAwNzgxIDQuODEyNS0zLjMyODEyNSA4LjE0MDYyNS0yLjY0MDYyNSAxMC4yMjY1NjMgMy41NTQ2ODcgMTAuNzc3MzQzIDI0Ljc5Mjk2OCAyMS41MzkwNjIgNDMuMzUxNTYyIDI4LjI3MzQzNy05LjU2MjUtMTkuOTIxODc1LTIzLjI1NzgxMi00MS4yNzczNDQtMzMuMjE4NzUtNDIuNzI2NTYyLS4yMjY1NjItLjAzNTE1Ni0uNTI3MzQ0LS4wNzgxMjUtLjg5ODQzNy0uMDc4MTI1em0wIDAiIGZpbGw9IiMwZTY1ZTUiLz48cGF0aCBkPSJtMjA0LjI4NTE1NiAzNjguNjg3NWMtMy43NzM0MzcgMC02LjgyODEyNS0zLjA1MDc4MS02LjgyODEyNS02LjgyNDIxOXYtMTkxLjE0ODQzN2MwLTMuNzczNDM4IDMuMDU0Njg4LTYuODI4MTI1IDYuODI4MTI1LTYuODI4MTI1IDMuNzczNDM4IDAgNi44MjQyMTkgMy4wNTQ2ODcgNi44MjQyMTkgNi44MjgxMjV2MTkxLjE0ODQzN2MwIDMuNzczNDM4LTMuMDUwNzgxIDYuODI0MjE5LTYuODI0MjE5IDYuODI0MjE5em0wIDAiIGZpbGw9IiMwZTY1ZTUiLz48cGF0aCBkPSJtMjQ1LjgwODU5NCAzNzUuNTE1NjI1Yy0zLjc3MzQzOCAwLTYuODI0MjE5LTMuMDU0Njg3LTYuODI0MjE5LTYuODI4MTI1di0yNy4zMDQ2ODhjMC0zLjc3MzQzNyAzLjA1MDc4MS02LjgyODEyNCA2LjgyNDIxOS02LjgyODEyNCAzLjc3MzQzNyAwIDYuODI4MTI1IDMuMDU0Njg3IDYuODI4MTI1IDYuODI4MTI0djI3LjMwNDY4OGMwIDMuNzczNDM4LTMuMDU0Njg4IDYuODI4MTI1LTYuODI4MTI1IDYuODI4MTI1em0wIDAiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMjU5LjQ2NDg0NCAzNjEuODYzMjgxaC0yNy4zMDg1OTRjLTMuNzczNDM4IDAtNi44MjQyMTktMy4wNTQ2ODctNi44MjQyMTktNi44MjgxMjUgMC0zLjc3MzQzNyAzLjA1MDc4MS02LjgyODEyNSA2LjgyNDIxOS02LjgyODEyNWgyNy4zMDg1OTRjMy43NzM0MzcgMCA2LjgyNDIxOCAzLjA1NDY4OCA2LjgyNDIxOCA2LjgyODEyNSAwIDMuNzczNDM4LTMuMDUwNzgxIDYuODI4MTI1LTYuODI0MjE4IDYuODI4MTI1em0wIDAiIGZpbGw9IiNmZmYiLz48L3N2Zz4K" />Wholesaleby</h3>
+		<!--
+        <div layout="row" layout-align="start center">
+          <md-icon class="md-avatar" md-svg-icon="avatars:svg-1"></md-icon>
+          <span flex></span>
+        </div>
+        <span flex></span>
+        <div class="md-body-2">Satnam Saini</div>
+        <div class="md-body-1">sainisatnam52@gmail.com</div>
+		-->
+      </md-toolbar>
+      <md-list>
+        <md-list-item class="md-2-line" ng-repeat="item in menu" role="link" ng-click="toggleSidenav('left')">
+          <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+          <div class="md-list-item-text">
+            <span class="md-body-2">{{item.title}}</span>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader  class="md-no-sticky">Management</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="item in admin" role="link" ng-click="toggleSidenav('left')">
+          <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+          <div class="md-list-item-text">
+            <span class="md-body-2">{{item.title}}</span>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+    <md-content layout="column" class="relative" layout-fill role="main">
+      <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
+        <md-icon md-svg-icon="content:ic_add_24px" aria-label="Plus"></md-icon>
+      </md-button>
+
+      <md-content flex layout="row">
+        <md-sidenav layout="column" layout-fill class="md-sidenav-left md-sidenav-list" md-component-id="nav" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-toolbar class="md-whiteframe-z1" ng-class="{'md-hue-1':showSearch}">
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+                  <md-icon md-svg-icon="navigation:ic_menu_24px" aria-label="Menu"></md-icon>
+                </md-button>
+                <h3 ng-if="!showSearch">
+                  Goods/Services
+                </h3>
+                <span flex ng-if="!showSearch"></span>
+                <md-button class="md-icon-button" aria-label="Search" ng-click="toggleSearch()">
+                  <md-icon ng-if="!showSearch" md-svg-icon="action:ic_search_24px" aria-label="Search"></md-icon>
+                  <md-icon ng-if="showSearch" md-svg-icon="navigation:ic_arrow_back_24px" aria-label="Back"></md-icon>
+                </md-button>
+                <md-input-container md-theme="input" ng-show="showSearch">
+                  <label>&nbsp;</label>
+                  <input ng-model="search.title" placeholder="enter search">
+                </md-input-container>
+              </div>
+            </md-toolbar>
+            <md-list flex>
+              <md-list-item class="md-2-line" ng-repeat="item in apps | filter:search" role="link" ng-click="toggleSidenav('nav'); $parent.appIcon = item.icon; $parent.appName = item.title; $parent.appDesc = item.desc;">
+                <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+                <div class="md-list-item-text">
+                  <div class="md-body-2">{{item.title}}</div>
+                  <p class="md-body-2">{{item.desc}}</p>
+                </div>
+                <md-divider></md-divider>
+              </md-list-item>
+
+            </md-list>
+          </md-sidenav>
+        <md-content layout="column" layout-fill>
+          <md-toolbar class="animate-show md-whiteframe-z1">
+            <div class="md-toolbar-tools">
+              <md-button class="md-icon-button" ng-click="toggleSidenav('nav')" hide-gt-sm aria-label="Menu">
+                <md-icon md-svg-icon="navigation:ic_arrow_back_24px" aria-label="Menu"></md-icon>
+              </md-button>
+              <span flex></span>
+              <md-button class="md-icon-button" aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+                <md-icon md-svg-icon="navigation:ic_more_vert_24px" aria-label="More"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <div class="inset" hide-sm></div>
+            <div layout-gt-sm="row" layout-align="center center">
+              <div flex-gt-sm="95" flex-gt-lg="80" style="height: 100px">
+                <md-card>
+                  <md-toolbar class="animate-show md-hue-2" ng-show="!editApp">
+                    <md-list-item class="md-3-line">
+                      <md-icon class="md-avatar" hide-sm md-svg-icon="{{appIcon || 'navigation:ic_apps_24px'}}"></md-icon>
+                      <div class="md-list-item-text">
+                        <div class="md-headline">{{appName || 'Sugar'}}</div>
+                        <h4>{{appDesc || '$2.40/lb'}}</h4>
+                      </div>
+                    </md-list-item>
+                  </md-toolbar>
+                  <md-toolbar class="animate-show md-hue-1 edit-app" ng-show="editApp">
+                    <md-list-item class="md-3-line">
+                      <md-icon class="md-avatar" hide-sm md-svg-icon="{{appIcon || 'navigation:ic_apps_24px'}}"></md-icon>
+                      <div class="md-list-item-text">
+                        <md-input-container>
+                          <label>App Name</label>
+                          <input ng-model="appName">
+                        </md-input-container>
+                        <md-input-container>
+                          <label>App Description</label>
+                          <input ng-model="appDesc">
+                        </md-input-container>
+                      </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                  </md-toolbar>
+                  <md-list>
+                    <md-list-item class="md-3-line" ng-repeat="item in attributes">
+                      <md-icon class="md-accent" hide-sm md-svg-icon="{{item.icon}}"></md-icon>
+                      <div class="md-list-item-text">
+                        <h3>{{item.value || 'Attribute value'}}</h3>
+                        <p>{{item.title || 'Attribute title'}}</p>
+                      </div>
+                      <md-divider md-inset hide-sm></md-divider>
+                      <md-divider hide-gt-sm></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line">
+                      <md-icon class="md-accent" hide-sm md-svg-icon="editor:ic_linear_scale_24px"></md-icon>
+                      <div class="md-list-item-text" ng-init="appScale = 20">
+                        <h3>{{appScale}} buyers</h3>
+                        <md-slider ng-show="editApp" flex md-discrete step="1" min="1" max="50" ng-model="appScale" aria-label="Scale"></md-slider>
+                        <p>Scale</p>
+                      </div>
+                    </md-list-item>
+<!--
+                    <md-divider></md-divider>
+                    <md-list-item>
+                      <md-button class="md-primary" ng-show="!editApp">
+                        <md-icon md-svg-icon="navigation:ic_arrow_forward_24px" aria-label="Forward"></md-icon>
+                        <span>Execute</span>
+                      </md-button>
+                      <md-button class="md-primary" ng-click="editApp = 0" ng-show="editApp">
+                        <md-icon md-svg-icon="navigation:ic_check_24px" aria-label="Save"></md-icon>
+                        <span>Save</span>
+                      </md-button>
+                      <md-button ng-click="editApp = 1" ng-show="!editApp">
+                        <md-icon md-svg-icon="editor:ic_mode_edit_24px" aria-label="Edit"></md-icon>
+                        <span>Edit</span>
+                      </md-button>
+                      <span flex></span>
+                      <md-button class="md-warn" ng-show="!editApp">
+                        <md-icon md-svg-icon="action:ic_delete_24px" aria-label="Delete"></md-icon>
+                        <span>Delete</span>
+                      </md-button>
+                      <md-button ng-click="editApp = 0" ng-show="editApp">
+                        <md-icon md-svg-icon="navigation:ic_close_24px" aria-label="Cancel"></md-icon>
+                        <span>Cancel</span>
+                      </md-button>
+                    </md-list-item>
+-->
+                  </md-list>
+                </md-card>
+
+<br />
+
+				<md-card>
+                  <md-toolbar class="animate-show md-hue-2" ng-show="!editApp">
+                    <md-list-item class="md-3-line">
+                      <md-icon class="md-avatar" hide-sm md-svg-icon="{{appIcon || 'navigation:ic_apps_24px'}}"></md-icon>
+                      <div class="md-list-item-text">
+                        <div class="md-headline">Negotiation Letter</div>
+                        <h4>Use the generated template below to negotiate wholesale rates with external providers:</h4>
+                      </div>
+                    </md-list-item>
+                  </md-toolbar>
+					
+					<div id="letter" style="
+    margin: 0 15px;">
+						<p>To whom it may concern,</p>
+<p>We take this opportunity to declare our intention to purchase sugar from your organization in Bogotá, Columbia. Our community is duly organized and existing under all appropriate local laws. Our princinple activities include baking, cooking, deliveries, and distribution of final goods.</p>
+<p>In lin with the above statement, we the community of Southside Rising, ask for a wholesale agreement from your company to sell us sugar for a bulk total of $1.90/lb. We believe that selling in wholesale to us will provide us both with many benefits for the following reasons:</p>
+<ul>
+<li> We have a combined purchase power of <b>20 community members</b>.
+<li> We purchase <b>46 lbs of sugar per month</b> on average.
+<li> We are one of the most prominent communities in Bogotá, and once we start ramping up our cooking/baking production, we will be able to purchase even more from you.
+</ul>
+<p>We understand that this letter of intent is a starting point for further negotiations and operates as a framework under which the transaction can proceed.</p>
+<p>We look forward to working with you on this proposal, and we hope it can be beneficial for both parties. Thank you for your time!</p>
+<p>Sincerely,<br />
+The community of Southside Rising, in Bogotá, Columbia
+</p>
+					</div> 
+				</md-card>
+<br />
+              </div>
+          </div>
+        </md-content>
+      </md-content>
+    </md-content>
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+    <!-- Angular Material -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+  </body>
+</html>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
